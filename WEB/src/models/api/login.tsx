@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export interface LoginDTO {
   id: string;
   username: string;
@@ -8,39 +10,31 @@ export interface CreateLoginDTO {
   password: string;
 }
 
-const API_URL = "http:\\192.168.1.20:3833/api/user";
+const API_URL = "http://localhost:3833/api/user";
 
 export const createLogin = async (
   createData: CreateLoginDTO
 ): Promise<LoginDTO | null> => {
-  const response = await fetch(`${API_URL}/login`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(createData),
-  });
-
-  if (!response.ok) {
-    throw new Error(response.statusText);
+  try {
+    const response = await axios.post(`${API_URL}/login`, createData);
+    return response.data;
+  } catch (error) {
+    console.error("Error during login:", error);
+    return null;
   }
-
-  const data = await response.json();
-  return data;
 };
 
-export const createUser = async (createData: CreateLoginDTO) => {
-  const response = await fetch(`${API_URL}/create`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(createData),
-  });
-
-  if (!response.ok) {
-    throw new Error(response.statusText);
+export const createUser = async (
+  createData: CreateLoginDTO
+): Promise<LoginDTO | null> => {
+  try {
+    const response = await axios.post(`http://localhost:3833/api/user/create`, {
+      username: createData.username,
+      password: createData.password,
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error during user creation:", error);
+    return null;
   }
-
-  return response.ok;
 };

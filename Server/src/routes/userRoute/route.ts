@@ -21,6 +21,7 @@ const userRoutes = async (app: FastifyInstance) => {
     createUser
   );
   app.post("/login", login);
+  app.get("/", getAllUsers);
 };
 
 export default userRoutes;

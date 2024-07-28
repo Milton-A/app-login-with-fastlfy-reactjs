@@ -1,11 +1,17 @@
 import fastify from "fastify";
 import buildServerRoutes from "./routes/routes";
+import cors from "@fastify/cors";
+
 import {
   validatorCompiler,
   serializerCompiler,
 } from "fastify-type-provider-zod";
 
 const server = buildServerRoutes();
+server.register(cors, {
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+});
 
 server.setValidatorCompiler(validatorCompiler);
 server.setSerializerCompiler(serializerCompiler);

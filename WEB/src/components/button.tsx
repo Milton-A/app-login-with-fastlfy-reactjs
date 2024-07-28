@@ -6,6 +6,7 @@ type Variants = "primary" | "secondary";
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: Variants;
   isLoading?: boolean;
+  isDisabled?: boolean;
 };
 
 const ThemeContext = createContext<{ variant?: Variants }>({});
@@ -15,28 +16,23 @@ function Button({
   isLoading,
   className,
   children,
+  isDisabled,
   ...rest
 }: ButtonProps) {
   return (
     <button
       className={clsx(
-        "h-11 w-80 flex-row items-center justify-center rounded-lg gap-2 px-2",
+        "h-11 w-80 flex-row items-center justify-center rounded-lg gap-2 px-2 ",
         {
-          "bg-cyan-700": variant === "primary",
+          "bg-cyan-700 ": variant === "primary",
           "bg-cyan-900": variant === "secondary",
         }
       )}
-      disabled={isLoading}
+      disabled={isLoading || isDisabled}
       {...rest}
     >
       <ThemeContext.Provider value={{ variant }}>
-        {isLoading ? (
-          <svg className="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
-            {/* ... */}
-          </svg>
-        ) : (
-          children
-        )}
+        {isLoading ? <span>loading...</span> : children}
       </ThemeContext.Provider>
     </button>
   );
