@@ -1,5 +1,3 @@
-Aqui está uma versão reorganizada e aprimorada do README para a sua aplicação simples de login e cadastro:
-
 ---
 
 # Projeto de Login e Cadastro
@@ -139,10 +137,4 @@ yarn start
 4. Faça push para a branch (`git push origin feature/nova-feature`).
 5. Abra um Pull Request.
 
-## Licença
-
-Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
 ---
-
-Esse README oferece uma visão geral clara e organizada do projeto, suas tecnologias, estrutura de pastas e design patterns utilizados.
