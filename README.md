@@ -2,6 +2,8 @@
 
 # README - Projeto de Login e Cadastro
 
+![image](https://github.com/user-attachments/assets/a23b3bb4-4c59-4042-b1f4-0f62ddea0b2d)
+
 ## Descrição
 
 Este projeto é uma aplicação web simples para login e cadastro de usuários, construída com uma stack moderna de tecnologias web. A aplicação segue o padrão de design **MVVM** (Model-View-ViewModel) e utiliza uma arquitetura baseada em componentes para promover modularidade e reutilização.
