@@ -28,7 +28,6 @@ function Input({ children, variant }: InputProps) {
 function Field({ ...rest }: React.InputHTMLAttributes<HTMLInputElement>) {
   return (
     <input
-      type="text"
       className=" w-full text-zinc-300 bg-zinc-800"
       style={{ height: "44px", outline: "none" }}
       {...rest}
