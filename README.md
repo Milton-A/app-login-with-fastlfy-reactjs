@@ -11,7 +11,7 @@ Este projeto é uma aplicação web simples para login e cadastro de usuários, 
 ## Tecnologias Utilizadas
 
 ### Backend
-
+ 
 - **Node.js**: Plataforma de desenvolvimento server-side.
 - **Fastify**: Framework web para Node.js, focado em performance.
 - **TypeScript**: Superconjunto de JavaScript que adiciona tipos estáticos.
